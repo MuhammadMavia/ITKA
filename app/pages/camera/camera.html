@@ -1,0 +1,13 @@
+<ion-navbar primary *navbar>
+    <ion-title>Camera</ion-title>
+</ion-navbar>
+
+<ion-content>
+    <button dark full (click)="getDate()">Date</button>
+    <button dark full (click)="getContacts()">getContacts</button>
+    <button full (click)="myBadge()">Badge</button>
+    <button (click)="myToast()">Toast</button>
+    <button fab (click)="getPic()">
+        <ion-icon name="camera"></ion-icon>
+    </button>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-navbar dark *navbar>
+    <ion-title>Home</ion-title>
+</ion-navbar>
+
+<ion-content class="home">
+    <ion-list>
+        <ion-item>
+            <ion-label>Gaming</ion-label>
+            <ion-select dark [(ngModel)]="gaming" multiple="true">
+                <ion-option>NES</ion-option>
+                <ion-option value="n64">Nintendo64</ion-option>
+                <ion-option value="ps">PlayStation</ion-option>
+                <ion-option value="genesis">Sega Genesis</ion-option>
+                <ion-option value="saturn">Sega Saturn</ion-option>
+                <ion-option value="snes">SNES</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <button dark full (click)="goToPage01()">Go To Page 01</button>
+    <button full (click)="presentLoading()">present Loading</button>
+    <button full (click)="doAlert()">Alert</button>
+    <button secoundry full (click)="doPrompt()">Prompt</button>
+    <button danger full (click)="presentToast()">Toast</button>
+    <button secoundry full (click)="doConfirm()">Confirm</button>
+    <button dark block (click)="presentActionSheet()">ActionSheet</button>
+    <button danger full (click)="showModal()">show Modal</button>
+    <ion-item>
+        <ion-label> Sam {{toggle | json}}</ion-label>
+        <ion-toggle dark [(ngModel)]="toggle" checked="{{!toggle}}"></ion-toggle>
+    </ion-item>
+    <button fab (click)="goToCamera()">
+        <ion-icon name="camera"></ion-icon>
+    </button>
+
+</ion-content>

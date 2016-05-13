@@ -1,0 +1,13 @@
+<ion-navbar primary *navbar>
+    <ion-title>Contacts</ion-title>
+</ion-navbar>
+
+<ion-content style="overflow: auto">
+    <ion-list>
+        <ion-item *ngFor="#contact of contacts" (click)="goToSms(contact)">
+            <h2>{{contact.displayName}}</h2>
+            <h3>{{contact.phoneNumbers[0].value}}</h3>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

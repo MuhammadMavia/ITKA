@@ -1,0 +1,36 @@
+<ion-navbar primary *navbar>
+    <ion-title>Send SMS</ion-title>
+</ion-navbar>
+
+<ion-content style="overflow: auto">
+    <ion-card>
+
+        <ion-item>
+            <h2>{{selectedContact.displayName}}</h2>
+            <p>{{selectedContact.phoneNumbers[0].value}}</p>
+        </ion-item>
+
+    </ion-card>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Message</ion-label>
+            <ion-input [(ngModel)]="smsData.msg" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Number of SMS</ion-label>
+            <ion-select [(ngModel)]="smsData.count">
+                <ion-option *ngFor="#c of counts">{{c}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Duration</ion-label>
+            <ion-select [(ngModel)]="smsData.duration">
+                <ion-option value="{{d}}" *ngFor="#d of durations">{{d}} second</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <div padding>
+        <button (click)="sendMsgs(smsData)" block>Send</button>
+    </div>
+</ion-content>
